@@ -10,3 +10,6 @@ wq:
 
 dr:
 	go run main.go -type=durable
+
+tp:
+	go run main.go -type=topic

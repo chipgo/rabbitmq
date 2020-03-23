@@ -34,6 +34,10 @@ func main() {
 	util.FailOnError(err, "Failed to open channel")
 	defer ch.Close()
 
+	// Fair dispath
+	err = ch.Qos(1, 0, false)
+	util.FailOnError(err, "Failed to set QoS")
+
 	exchangeType := flag.String("type", "default", "type exchange to demo")
 	flag.Parse()
 
@@ -48,6 +52,9 @@ func main() {
 	case "durable":
 		consumer.Duration(ch, stopSignal)
 		publisher.Duration(ch, stopSignal)
+	case "topic":
+		consumer.Topic(ch, stopSignal)
+		publisher.Topic(ch, stopSignal)
 	default:
 		log.Println("Unknown Exchange Type")
 	}

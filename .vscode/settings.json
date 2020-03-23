@@ -1,5 +1,12 @@
 {
-  "cSpell.words": ["amqp", "rabbitmq", "streadway"],
+  "cSpell.words": [
+    "amqp",
+    "fanout",
+    "fsync",
+    "prefetch",
+    "rabbitmq",
+    "streadway"
+  ],
   "go.lintTool": "gometalinter",
   "go.lintFlags": [
     "--exclude=\"\bexported \\w+ (\\S*['.]*)([a-zA-Z'.*]*) should have comment or be unexported\b\""
