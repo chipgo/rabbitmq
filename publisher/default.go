@@ -10,6 +10,7 @@ import (
 )
 
 func DefaultPublisher(ch *amqp.Channel, stop chan bool) {
+	// you can redefine queue with same params
 	q, err := ch.QueueDeclare("queue", false, false, false, false, nil)
 	util.FailOnError(err, "Failed to declare a queue")
 

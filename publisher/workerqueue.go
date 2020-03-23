@@ -9,7 +9,7 @@ import (
 )
 
 func WorkerQueue(ch *amqp.Channel, stop chan bool) {
-	q, err := ch.QueueDeclare("queue", false, false, false, false, nil)
+	q, err := ch.QueueDeclare("queue01", false, false, false, false, nil)
 	util.FailOnError(err, "Failed to declare a queue")
 
 	ticker := time.NewTicker(2 * time.Second)
